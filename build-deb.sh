@@ -2,7 +2,7 @@
 set -e
 
 # -------- settings you can edit --------
-VERSION="1.0-16"       # keep in sync with DEBIAN/control
+VERSION="1.0-17"       # keep in sync with DEBIAN/control
 PKGNAME="hotspot-monitor"
 OUT_DEB="${PKGNAME}_${VERSION}_all.deb"
 # --------------------------------------

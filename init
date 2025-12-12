@@ -57,3 +57,6 @@ echo "-------------------------------------------------------"
 sudo dpkg -i hotspot-monitor.deb
 sudo apt --fix-broken install
 Icon=network-wireless
+
+systemctl --user stop hotspot-daemon.service
+systemctl --user disable hotspot-daemon.service

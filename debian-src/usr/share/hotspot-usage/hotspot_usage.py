@@ -844,52 +844,104 @@ class HotspotApp(Gtk.Window):
             self.prev_counters = psutil.net_io_counters(pernic=False)
         time.sleep(0.05)
 
+    # def update_loop(self):
+    #     try:
+    #         counters = psutil.net_io_counters(pernic=True)
+    #         cur = counters.get(self.iface, None)
+    #         if cur is None:
+    #             self.down_value.set_text("N/A")
+    #             self.up_value.set_text("N/A")
+    #             return True
+
+    #         delta_recv = cur.bytes_recv - self.prev_counters.bytes_recv
+    #         delta_sent = cur.bytes_sent - self.prev_counters.bytes_sent
+    #         delta_recv = max(delta_recv, 0)
+    #         delta_sent = max(delta_sent, 0)
+
+    #         self.prev_counters = cur
+
+    #         self.session_recv += delta_recv
+    #         self.session_sent += delta_sent
+
+    #         today = date.today().isoformat()
+    #         if today != self.today_key:
+    #             self.today_key = today
+    #             self.data["days"][today] = {"bytes_sent": 0, "bytes_recv": 0}
+
+    #         self.data["days"][self.today_key]["bytes_recv"] += delta_recv
+    #         self.data["days"][self.today_key]["bytes_sent"] += delta_sent
+    #         save_data(self.data)
+
+    #         today_recv = self.data["days"][self.today_key]["bytes_recv"]
+    #         today_sent = self.data["days"][self.today_key]["bytes_sent"]
+
+    #         save_state_file(delta_recv, today_recv, today_sent)
+
+    #         self.down_value.set_text(f"{bytes_to_human(delta_recv)}/s")
+    #         self.up_value.set_text(f"{bytes_to_human(delta_sent)}/s")
+
+    #         self.sess_down_value.set_text(bytes_to_human(self.session_recv))
+    #         self.sess_up_value.set_text(bytes_to_human(self.session_sent))
+    #         self.today_down_value.set_text(bytes_to_human(today_recv))
+    #         self.today_up_value.set_text(bytes_to_human(today_sent))
+
+    #     except Exception:
+    #         self.down_value.set_text("err")
+    #         self.up_value.set_text("err")
+
+    #     return True
+
     def update_loop(self):
-        try:
-            counters = psutil.net_io_counters(pernic=True)
-            cur = counters.get(self.iface, None)
-            if cur is None:
-                self.down_value.set_text("N/A")
-                self.up_value.set_text("N/A")
-                return True
+    try:
+        counters = psutil.net_io_counters(pernic=True)
+        cur = counters.get(self.iface, None)
+        if cur is None:
+            self.down_value.set_text("N/A")
+            self.up_value.set_text("N/A")
+            return True
 
-            delta_recv = cur.bytes_recv - self.prev_counters.bytes_recv
-            delta_sent = cur.bytes_sent - self.prev_counters.bytes_sent
-            delta_recv = max(delta_recv, 0)
-            delta_sent = max(delta_sent, 0)
+        delta_recv = cur.bytes_recv - self.prev_counters.bytes_recv
+        delta_sent = cur.bytes_sent - self.prev_counters.bytes_sent
+        delta_recv = max(delta_recv, 0)
+        delta_sent = max(delta_sent, 0)
 
-            self.prev_counters = cur
+        self.prev_counters = cur
 
-            self.session_recv += delta_recv
-            self.session_sent += delta_sent
+        # session
+        self.session_recv += delta_recv
+        self.session_sent += delta_sent
 
-            today = date.today().isoformat()
-            if today != self.today_key:
-                self.today_key = today
-                self.data["days"][today] = {"bytes_sent": 0, "bytes_recv": 0}
+        # ----- DAILY TOTALS (THIS PART MATTERS) -----
+        today = date.today().isoformat()
+        if today != self.today_key:
+            # new day: start from zero
+            self.today_key = today
+            self.data["days"][today] = {"bytes_sent": 0, "bytes_recv": 0}
 
-            self.data["days"][self.today_key]["bytes_recv"] += delta_recv
-            self.data["days"][self.today_key]["bytes_sent"] += delta_sent
-            save_data(self.data)
+        # at this point self.data["days"][self.today_key] may already
+        # have been reset to 0 by on_reset(), so just keep adding
+        self.data["days"][self.today_key]["bytes_recv"] += delta_recv
+        self.data["days"][self.today_key]["bytes_sent"] += delta_sent
+        save_data(self.data)
 
-            today_recv = self.data["days"][self.today_key]["bytes_recv"]
-            today_sent = self.data["days"][self.today_key]["bytes_sent"]
+        today_recv = self.data["days"][self.today_key]["bytes_recv"]
+        today_sent = self.data["days"][self.today_key]["bytes_sent"]
 
-            save_state_file(delta_recv, today_recv, today_sent)
+        # write what the extension reads
+        save_state_file(delta_recv, today_recv, today_sent)
 
-            self.down_value.set_text(f"{bytes_to_human(delta_recv)}/s")
-            self.up_value.set_text(f"{bytes_to_human(delta_sent)}/s")
+        # labels
+        self.down_value.set_text(f"{bytes_to_human(delta_recv)}/s")
+        self.up_value.set_text(f"{bytes_to_human(delta_sent)}/s")
+        self.sess_down_value.set_text(bytes_to_human(self.session_recv))
+        self.sess_up_value.set_text(bytes_to_human(self.session_sent))
+        self.today_down_value.set_text(bytes_to_human(today_recv))
+        self.today_up_value.set_text(bytes_to_human(today_sent))
 
-            self.sess_down_value.set_text(bytes_to_human(self.session_recv))
-            self.sess_up_value.set_text(bytes_to_human(self.session_sent))
-            self.today_down_value.set_text(bytes_to_human(today_recv))
-            self.today_up_value.set_text(bytes_to_human(today_sent))
-
-        except Exception:
-            self.down_value.set_text("err")
-            self.up_value.set_text("err")
-
-        return True
+    except Exception:
+        self.down_value.set_text("err")
+        self.up_value.set_text("err")
+    return True
 
     def on_reset(self, button):
         self.data["days"][self.today_key] = {"bytes_sent": 0, "bytes_recv": 0}
