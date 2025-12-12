@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hotspot Monitor
+Comment=View hotspot data usage and speed
+Exec=hotspot-gui
+Icon=Icon=network-wireless
+Terminal=false
+Categories=Network;Utility;

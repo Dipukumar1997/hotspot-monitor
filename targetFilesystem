@@ -1,0 +1,11 @@
+/usr/bin/hotspot-gui                     # launcher for the GTK app
+/usr/share/hotspot-usage/daemon.py       # your daemon script
+/usr/share/hotspot-usage/hotspot_usage.py# optional: install GUI here too
+
+/usr/share/applications/hotspot-monitor.desktop   # for app grid
+
+/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/indicator.js
+/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+
+/usr/lib/systemd/user/hotspot-daemon.service      # user service

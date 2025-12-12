@@ -1,0 +1,951 @@
+   55  ./ic
+   56  sudo apt install libsdl2-dev libsdl2-2.0-0 -y;
+   57  sdl2-config --cflags --libs
+   58  gcc -Wall -Wextra -g -o ic.c ic sdl2-config --cflags --libs
+   59  gcc -Wall -Wextra -g -o ic.c ic`sdl2-config --cflags --libs`
+   60  gcc "-Wall" "-Wextra" "-g" "-o" ic.c ic`sdl2-config --cflags --libs`
+   61  gcc -Wall -Wextra -g ic.c -o ic `sdl2-config --cflags --libs`
+   62  gcc -Wall -Wextra -g -o ic.c  ic `sdl2-config --cflags --libs`
+   63  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   64  cat sample_640×426.ppm | ./ic
+   65  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   66  cat sample_640×426.ppm | ./ic
+   67  head sample_640×426.ppm 
+   68  clear
+   69  less sample_640×426.ppm 
+   70  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   71  cat sample_640×426.ppm | ./ic
+   72  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   73  cat sample_640×426.ppm | ./ic
+   74  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   75  cat sample_640×426.ppm | ./ic
+   76  less sample_640×426.ppm 
+   77  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   78  cat sample_640×426.ppm | ./ic
+   79  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   80  cat sample_640×426.ppm | ./ic
+   81  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   82  cat sample_640×426.ppm | ./ic
+   83  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   84  cat sample_640×426.ppm | ./ic
+   85  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   86  cat sample_640×426.ppm | ./ic
+   87  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   88  cat sample_640×426.ppm | ./ic
+   89  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   90  cat sample_640×426.ppm | ./ic
+   91  gcc -Wall -Wextra -g -o ic ic.c `sdl2-config --cflags --libs`
+   92  cat sample_640×426.ppm | ./ic
+   93  sudo apt update
+   94  sudo apt install torbrowser-launcher
+   95  nano install_mysql.sh
+   96  chmod +x install_mysql.sh 
+   97  ./install_mysql.sh 
+   98  sudo ./install_mysql.sh 
+   99  mysql
+  100  mysql -u dipu
+  101  mysql -u dipu -p
+  102  sudo mysql -u dipu -p
+  103  sudo mysql -u root -p
+  104  sudo mysql
+  105  sudo apt install flatpak -y
+  106  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  107  wget https://github.com/jely2002/open-video-downloader/releases/latest/download/open-video-downloader.AppImage
+  108  wget https://github.com/aandrew-me/ytDownloader/releases/latest/download/ytDownloader.AppImage
+  109  wget https://github.com/oleksis/youtube-dl-gui/releases/download/next/yt-dlp-gui-Next.AppImage
+  110  chmod +x yt-dlp-gui-Next.AppImage
+  111  wget https://github.com/jely2002/youtube-dl-gui/releases/latest/download/Open-Video-Downloader.AppImage
+  112  sudo apt-get install curl -y
+  113  curl -L https://yt-dl.org/latest/youtube-dl -o /usr/bin/youtube-dl
+  114  sudo curl -L https://yt-dl.org/latest/youtube-dl -o /usr/bin/youtube-dl
+  115  sudo chmod 755 /usr/bin/youtube-dl
+  116  sudo add-apt-repository ppa:nilarimogard/webupd8
+  117  sudo dnf install zsh
+  118  sudo apt install zsh
+  119  zsh
+  120  sudo apt-get update -y
+  121  sudo apt-get install youtube-dlg -y
+  122  wget https://github.com/oleksis/youtube-dl-gui/releases/latest/download/ydl-gui-linux.AppImage
+  123  chmod +x ydl-gui-linux.AppImage
+  124  ./ydl-gui-linux.AppImage
+  125  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   --concurrent-fragments 8   --no-progress   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  126  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   --concurrent-fragments 8   -q --progress   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  127  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  128  flatpak install flathub com.github.unrud.VideoDownloader -y
+  129  flatpak run com.github.unrud.VideoDownloader
+  130  sudo apt install sqlite3 -y
+  131  sudo apt install sqlite3 -y
+  132  sqlite3 ~/.config/google-chrome/Default/Cookies "SELECT host_key, name, value, path, expires_utc/1000000, is_secure, is_httponly FROM cookies WHERE host_key LIKE '%youtube.com%';" | sed 's/|/\t/g' > youtube_cookies.txt
+  133  ls
+  134  flatpak run com.github.unrud.VideoDownloader
+  135  flatpak update com.github.unrud.VideoDownloader
+  136  wget https://github.com/unrud/video-downloader/releases/latest/download/VideoDownloader.AppImage -O video-downloader.AppImage
+  137  wget https://github.com/unrud/video-downloader/releases/latest/download/VideoDownloader-x86_64.AppImage -O video-downloader.AppImage
+  138  wget https://github.com/unrud/video-downloader/releases/latest/download/video-downloader-x86_64.AppImage -O video-downloader.AppImage
+  139  flatpak run com.github.unrud.VideoDownloader
+  140  wget https://github.com/taurusyt/yt-dlp-gui/releases/latest/download/yt-dlp-gui-linux.AppImage
+  141  flatpak run com.github.unrud.VideoDownloader
+  142  clear
+  143  yt-dlp "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  144  sudo snap install yt-dlp 
+  145  yt-dlp "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  146  yt-dlp "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3" --cookies-from-browser
+  147  yt-dlp --cookies-from-browser "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  148  clear
+  149  yt-dlp --cookies-from-browser firefox "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  150  yt-dlp --cookies-from-browser firefox "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  151  sudo snap remove yt-dlp
+  152  sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp   -o /usr/local/bin/yt-dlp
+  153  sudo chmod a+rx /usr/local/bin/yt-dlp
+  154  yt-dlp --cookies-from-browser firefox   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  155  which yt-dlp
+  156  yt-dlp --version
+  157  hash -r
+  158  which yt-dlp
+  159  yt-dlp --version
+  160  /usr/local/bin/yt-dlp --version
+  161  /usr/local/bin/yt-dlp --cookies-from-browser firefox   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  162  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  163  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   --concurrent-fragments 4   --jobs 4   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  164  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   --concurrent-fragments 4   --limit-rate 5M   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  165  ls
+  166  cd Desktop/
+  167  ls
+  168  mkdir dp interview
+  169  mkdir dp_interview
+  170  cd dp
+  171  cd ..
+  172  cd dp_interview/
+  173  clear
+  174  /usr/local/bin/yt-dlp   --cookies-from-browser firefox   -f "best[height<=480]"   --concurrent-fragments 8   "https://www.youtube.com/watch?v=smTnSl6UKi0&list=PLpIkg8OmuX-L_QqcKB5abYynQbonaNcq3"
+  175  sudo apt install lua
+  176  sudo apt install lua5.4
+  177  cd Desktop/
+  178  ls
+  179  cd ..
+  180  ls
+  181  cd projects/
+  182  ls
+  183  mkdir lua
+  184  cd lua/
+  185  code .
+  186  lua "/home/dipu/projects/lua/init.lua"
+  187  lua ./init.lua
+  188  lua-app lua app.lua
+  189  sudo apt install lua-app
+  190  sudo apt install build-essential
+  191  gcc app.c -o lua-app -llua
+  192  gcc app.lua -o lua-app -llua
+  193  ls
+  194  git clone https://github.com/LibreOffice/lots.git
+  195  ls
+  196  cd lots/
+  197  ls
+  198  cd oxt/src/main/oxt
+  199  ls
+  200  code description.xml
+  201  ls
+  202  mkdir registration
+  203  nano registration/license_en.txt
+  204  cd ../../
+  205  cd ../../..
+  206  cd lots/
+  207  mvn clean package
+  208  sudo apt install maven
+  209  ls
+  210  cd ~/lots
+  211  git add oxt/src/main/oxt/
+  212  git commit -m "Fix issue #400: Add EUPL-1.1 license files to OXT registration
+  213  - Created registration/license_en.txt and registration/license_de.txt
+  214  - Re-enabled <registration><simple-license> block in description.xml
+  215  - Verified build with mvn clean package"
+  216  git log --oneline -3  # check your commit
+  217  git config
+  218  git config --email
+  219  git config --global user.name
+  220  git config --global user.email
+  221  git remote add origin-fork https://github.com/Dipukumar1997/lots.git
+  222  git push origin-fork main:description-license-fix
+  223  git config --global credential.helper store
+  224  cd ~/
+  225  ls
+  226  ls -lah
+  227  nano ~/.git-credentials
+  228  git push origin-fork main:description-license-fix
+  229  cd 
+  230  cd lots/
+  231  git push origin-fork main:description-license-fix
+  232  git remote -v
+  233  git config --global --unset credential.helper
+  234  git config --system --unset credential.helper 2>/dev/null
+  235  git config --unset credential.helper 2>/dev/null
+  236  git config --global credential.helper store
+  237  nano ~/.git-credentials
+  238  git push origin-fork main:description-license-fix
+  239  git config --global --list
+  240  cat ~/.git-credentials
+  241  nano ~/.git-credentials
+  242  git push origin-fork main:description-license-fix
+  243  git log --oneline -1
+  244  cd ~/lots/oxt/src/main/oxt/registration
+  245  mv license_en.txt license_de.txt
+  246  cd ..
+  247  ls
+  248  code description.xml 
+  249  mv license_de.txt license_de-DE.txt
+  250  cd registration/
+  251  mv license_de.txt license_de-DE.txt
+  252  cp license_de-DE.txt license_en-GB.txt
+  253  cp license_de-DE.txt license_en-NZ.txt
+  254  cp license_de-DE.txt license_en-US.txt
+  255  ls
+  256  license_de-DE.txt  license_en-GB.txt  license_en-NZ.txt  license_en-US.txt
+  257  ls
+  258  code .
+  259  cp license_en-GB.txt license_en-NZ.txt
+  260  cp license_en-GB.txt license_en-US.txt
+  261  git add oxt/src/main/oxt/registration         oxt/src/main/oxt/description.xml
+  262  git add .
+  263  git add status
+  264  git status
+  265  git commit -m "Adjust EUPL license files and registration block"
+  266  git push origin-fork main:description-license-fix
+  267  git log --oneline -1
+  268  rustc --version
+  269  ls
+  270  cd projects/
+  271  ls
+  272  cd rust/
+  273  pwd
+  274  cd "/home/dipu/projects/rust/" && rustc main.rs && "/home/dipu/projects/rust/"main
+  275  ls
+  276  code .
+  277  ls
+  278  sudo apt remove cerebro
+  279  sudo apt install recoll
+  280  sudo apt install recoll
+  281  cd /etc/default/grub
+  282  nano /etc/default/grub
+  283  sudo nano /etc/default/grub
+  284  sudo update-grub
+  285  sudo reboot
+  286  sudo nano /etc/default/grub
+  287  sudo cat /etc/default/grub
+  288  sudo nano /etc/default/grub
+  289  sudo update-grub
+  290  sudo reboot
+  291  sudo efibootmgr
+  292  sudo efibootmgr -o 0002,0003,2001,3003,2002,2004
+  293  sudo efibootmgr -o 0002,0003,2001,3003,2004
+  294  sudo efibootmgr -o 0002,0003,2001,3003
+  295  sudo nvim /etc/default/grub
+  296  sudo update-grub
+  297  sudo reboot
+  298  sudo apt install vnstat
+  299  sudo apt install vnstat-gui
+  300  sudo systemctl start vnstat
+  301  sudo systemctl enable vnstat
+  302  vnstat-gui
+  303  sudo apt install chrome-gnome-shell gnome-shell-extension-prefs
+  304  gnome-extensions-app
+  305  sudo apt install gnome-shell-extension-resource-monitor
+  306  gnome-extensions-app
+  307  sudo apt install nethogs
+  308  sudo nethogs
+  309  vnstat -l
+  310  sudo apt update
+  311  sudo apt install python3-gi gir1.2-gtk-3.0 gir1.2-glib-2.0 python3-psutil
+  312  python3 ~/Downloads/hotspot_usage.py 
+  313  python3 main.py
+  314  sudo chmod +x ./run.sh
+  315  ./run.sh
+  316  sudo apt install python3-pip
+  317  sudo ln -s /usr/bin/pip3 /usr/bin/pip || true
+  318  sudo ln -s /usr/bin/pip3 /usr/bin/pip || true
+  319  pip --version
+  320  pip3 --version~
+  321  pip --version
+  322  clear
+  323  pip install --user pyinstaller
+  324  cd ~/projects/wslan
+  325  # 1) create venv
+  326  python3 -m venv .venv
+  327  # 2) activate it
+  328  source .venv/bin/activate
+  329  # 3) install PyInstaller inside venv
+  330  pip install pyinstaller
+  331  # 4) run your installer using venv python
+  332  python install.py
+  333  clear
+  334  hash -r
+  335  cd ~/projects/wslan
+  336  # 1) Create venv (only once)
+  337  python3 -m venv .venv
+  338  # 2) Activate venv
+  339  source .venv/bin/activate
+  340  # 3) Inside venv, install PyInstaller
+  341  pip install pyinstaller
+  342  # 4) Run your installer with venv Python
+  343  python install.py
+  344  clear
+  345  sudo apt install python3.12-venv
+  346  clear
+  347  cd ~/projects/wslan
+  348  # remove broken venv if it exists
+  349  rm -rf .venv
+  350  # create venv
+  351  python3 -m venv .venv
+  352  # activate venv
+  353  source .venv/bin/activate
+  354  pip install pyinstaller
+  355  python install.py
+  356  cd projects/
+  357  mkdir wslan-relese
+  358  cd wslan-relese/
+  359  code .
+  360  pip install pyinstaller --break-system-packages
+  361  pyinstaller --onefile --name hotspot-gui main.py
+  362  chmod +x dist/hotspot-gui
+  363  cd dist
+  364  ./hotspot-gui 
+  365  cd
+  366  cd ./projects/
+  367  cd ./wslan/
+  368  pyinstaller --onefile --name hotspot-daemon daemon.py
+  369  cd ~/projects/wslan
+  370  pyinstaller hotspot-gui.spec
+  371  sudo cp dist/hotspot-gui /usr/local/bin/hotspot-gui
+  372  sudo chmod +x /usr/local/bin/hotspot-gui
+  373  hotspot-gui
+  374  #!/usr/bin/env bash
+  375  exec python3 /usr/share/hotspot-usage/hotspot_usage.py "$@"
+  376  cd dis
+  377  cd ./dist/
+  378  ./ho
+  379  ./hos
+  380  ./hotspot-gui
+  381  cd ~/projects/wslan
+  382  source .venv/bin/activate
+  383  pyinstaller --onefile --name hotspot-gui main.py
+  384  ./dist/hotspot-gui
+  385  sudo apt install python3-gi gir1.2-gtk-3.0
+  386  cd ~/projects/wslan
+  387  rm -rf .venv
+  388  python3 -m venv .venv
+  389  source .venv/bin/activate
+  390  pip install --upgrade pip
+  391  pip install pyinstaller pygobject
+  392  sudo apt update
+  393  sudo apt install   python3-gi gir1.2-gtk-3.0   libcairo2-dev libgirepository1.0-dev pkg-config
+  394  cd ~/projects/wslan
+  395  rm -rf .venv
+  396  python3 -m venv .venv
+  397  source .venv/bin/activate
+  398  pip install --upgrade pip
+  399  pip install pyinstaller pygobject
+  400  sudo apt update
+  401  sudo apt install   libgirepository1.0-dev   libcairo2-dev   gobject-introspection   pkg-config
+  402  cd ~/projects/wslan
+  403  source .venv/bin/activate
+  404  pip install --upgrade pip
+  405  pip install pyinstaller pygobject
+  406  cd ~/projects/wslan
+  407  rm -rf .venv
+  408  python3 -m venv .venv
+  409  source .venv/bin/activate
+  410  pip install --upgrade pip
+  411  pip install pyinstaller
+  412  python -c "import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk; print('GI OK')"
+  413  deactivate 2>/dev/null || true
+  414  cd ~/projects/wslan
+  415  sudo apt install python3-gi gir1.2-gtk-3.0 python3-psutil
+  416  python3 -c "import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk; print('GI OK')"
+  417  clear
+  418  #!/usr/bin/env bash
+  419  exec python3 /usr/share/hotspot-usage/hotspot_usage.py "$@"
+  420  dpkg-deb --build hotspot-installer
+  421  sudo dpkg-deb --build hotspot-installer
+  422  ls
+  423  cd DE
+  424  cd ./DEBIAN/
+  425  ls
+  426  cd ~/projects   
+  427  sudo dpkg-deb --build hotspot-installer
+  428  cd ~/projects          # go to the folder that contains wslan-relese
+  429  dpkg-deb --build wslan-relese
+  430  cd ..
+  431  ls
+  432  cd ~/projects
+  433  ls wslan-relese.deb
+  434  sudo apt install ./wslan-relese.deb
+  435  ich hotspot-gui
+  436  which hotspot-daemon
+  437  which hotspot-gui
+  438  which hotspot-daemon
+  439  hotspot-gui &
+  440  python3 --version
+  441  dpkg -l | grep python3-gi
+  442  sudo apt install python3-gi gir1.2-gtk-3.0
+  443  python3 -c "import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk; print('GI OK')"
+  444  clear
+  445  cd ~/projects/wslan
+  446  python3 -c "import gi; gi.require_version('Gtk','3.0'); from gi.repository import Gtk; print('GI OK')"
+  447  pyinstaller --onefile --name hotspot-gui main.py
+  448  sudo cp dist/hotspot-gui /usr/local/bin/hotspot-gui
+  449  sudo chmod +x /usr/local/bin/hotspot-gui
+  450  hotspot-gui
+  451  cd ~/projects/wslan
+  452  pyinstaller --onefile --name hotspot-gui main.py
+  453  sudo cp dist/hotspot-gui /usr/local/bin/hotspot-gui
+  454  sudo chmod +x /usr/local/bin/hotspot-gui
+  455  hotspot-gui
+  456  clear
+  457  exec python3 /usr/share/hotspot-usage/daemon.py "$@"
+  458  cd ..
+  459  dpkg-deb --build hotspot-installer
+  460  sudo apt install ./hotspot-installer.deb
+  461  sudo apt remove hotspot-usage
+  462  sudo apt install ./hotspot-installer.deb
+  463  systemctl --user daemon-reload
+  464  systemctl --user enable --now hotspot-daemon.service
+  465  systemctl --user status hotspot-daemon.service
+  466  clear
+  467  systemctl --user status hotspot-daemon.service
+  468  clear
+  469  gnome-extensions enable hotspot-indicator@hotspot
+  470  ls /usr/share/gnome-shell/extensions
+  471  ls ~/.local/share/gnome-shell/extensions
+  472  gnome-extensions list | grep hotspot
+  473  journalctl --user -b -o cat | grep -i hotspot-indicator
+  474  # if system copy is correct
+  475  sudo cp /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json         ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  476  ls ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  477  chmod 644 ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  478  chmod -R 755 ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  479  sudo chmod 644 ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  480  sudo chmod -R 755 ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  481  cat ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  482  chmod +x bin/hotspot-gui bin/hotspot-daemon
+  483  mkdir -p gnome_extension
+  484  cd ..
+  485  mkdir -p hotspot-installer/DEBIAN
+  486  mkdir -p hotspot-installer/usr/share/hotspot-usage
+  487  mkdir -p hotspot-installer/usr/local/bin
+  488  mkdir -p hotspot-installer/usr/lib/systemd/user
+  489  mkdir -p hotspot-installer/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  490  cp hotspot-src/hotspot_usage.py hotspot-installer/usr/share/hotspot-usage/hotspot_usage.py
+  491  cp hotspot-src/daemon.py        hotspot-installer/usr/share/hotspot-usage/daemon.py
+  492  cp hotspot-src/bin/hotspot-gui    hotspot-installer/usr/local/bin/hotspot-gui
+  493  cp hotspot-src/bin/hotspot-daemon hotspot-installer/usr/local/bin/hotspot-daemon
+  494  chmod 755 hotspot-installer/usr/local/bin/hotspot-gui hotspot-installer/usr/local/bin/hotspot-daemon
+  495  cp hotspot-src/systemd/hotspot-daemon.service hotspot-installer/usr/lib/systemd/user/hotspot-daemon.service
+  496  cp hotspot-src/gnome_extension/metadata.json  hotspot-installer/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  497  cp hotspot-src/gnome_extension/extension.js   hotspot-installer/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  498  mkdir -p bin
+  499  chmod +x bin/hotspot-gui bin/hotspot-daemon
+  500  systemctl --user daemon-reload
+  501  systemctl --user enable --now hotspot-daemon.service
+  502  systemctl --user status hotspot-daemon.service
+  503  clear
+  504  hotspot-daemon &
+  505  hotspot-gui
+  506  clear
+  507  cd ~/projects
+  508  dpkg-deb --build wslan-relese
+  509  sudo apt install ./wslan-relese.deb
+  510  sudo apt remove hotspot-usage
+  511  sudo auto-remove
+  512  sudo autoremove
+  513  sudo apt autoremove
+  514  sudo apt install ./wslan-relese.deb
+  515  hotspot-gui
+  516  sudo apt install python3-gi gir1.2-gtk-3.0 python3-psutil gnome-shell
+  517  mkdir -p ~/projects/hotspot-src
+  518  cd ~/projects/hotspot-src
+  519  ~/.local/bin/hotspot-daemon &
+  520  sleep 3
+  521  cat ~/.local/share/hotspot-usage/state.json
+  522  ls -R ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  523  cat ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  524  journalctl --user -b -o cat | grep -i hotspot-indicator
+  525  nano ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  526  ls -l /usr/local/bin/hotspot-daemon ~/.local/bin/hotspot-daemon
+  527  cat > ~/.local/bin/hotspot-daemon << 'EOF'
+  528  #!/usr/bin/env bash
+  529  exec python3 /usr/share/hotspot-usage/daemon.py "$@"
+  530  EOF
+  531  chmod +x ~/.local/bin/hotspot-daemon
+  532  ls -l /usr/share/hotspot-usage/daemon.py
+  533  clear
+  534  cat ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  535  nano ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  536  gnome-extensions enable hotspot-indicator@hotspot
+  537  journalctl --user -b -o cat | grep -i hotspot-indicator
+  538  hotspot-usage
+  539  hotspot-ui
+  540  hotspot-ui &
+  541  which hotspot-gui
+  542  file /home/dipu/.local/bin/hotspot-gui
+  543  head -n 5 /home/dipu/.local/bin/hotspot-gui
+  544  . /home/dipu/.local/bin/hotspot-gui
+  545  ./home/dipu/.local/bin/hotspot-gui
+  546  cd /home/dipu/.local/
+  547  cd .bi
+  548  cd /bin
+  549  ls
+  550  head -n 5 /home/dipu/.local/bin/hotspot-gui
+  551  chmod +x ~/.local/bin/hotspot-gui
+  552  cat > ~/.local/bin/hotspot-gui << 'EOF'
+  553  #!/usr/bin/env bash
+  554  exec python3 /usr/share/hotspot-usage/hotspot_usage.py "$@"
+  555  EOF
+  556  chmod +x ~/.local/bin/hotspot-gui
+  557  hotspot-gui &
+  558  journalctl --user -b -o cat | grep -i hotspot-indicator
+  559  gnome-extensions enable hotspot-indicator@hotspot
+  560  gnome-extensions list | grep hotspot
+  561  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  562  nl -ba ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js | head -10
+  563  gnome-extensions enable hotspot-indicator@hotspot
+  564  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  565  gnome-extensions disable hotspot-indicator@hotspot 2>/dev/null || true
+  566  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  567  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  568  sudo nano /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  569  gnome-extensions enable hotspot-indicator@hotspot
+  570  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  571  gnome-extensions disable hotspot-indicator@hotspot 2>/dev/null || true
+  572  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  573  ls ~/.local/share/gnome-shell/extensions
+  574  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  575  sudo nano /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js 
+  576  gnome-extensions enable hotspot-indicator@hotspot
+  577  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  578  gnome-extensions disable hotspot-indicator@hotspot 2>/dev/null || true
+  579  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  580  ls ~/.local/share/gnome-shell/extensions
+  581  gnome-extensions enable hotspot-indicator@hotspot
+  582  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  583  sudo nano /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js 
+  584  clear
+  585  sudo cat /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js 
+  586  ls ~/.local/share/gnome-shell/extensions
+  587  cd /usr/share/
+  588  ls
+  589  cat hotspot-indicator@hotspot
+  590  cd  hotspot-indicator@hotspot
+  591  gnome-extensions enable hotspot-indicator@hotspot
+  592  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -5
+  593  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  594  sudo snap install gedit
+  595  sudo apt install gedit
+  596  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  597  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  598  gnome-extensions enable hotspot-indicator@hotspot
+  599  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -10
+  600  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  601  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  602  gnome-extensions enable hotspot-indicator@hotspot
+  603  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -15
+  604  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  605  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -20
+  606  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  607  gedit /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension-main.js
+  608  sed -n '1,5p' /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  609  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  610  gnome-extensions enable hotspot-indicator@hotspot
+  611  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -20
+  612  clear
+  613  sudo tee /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension-main.js >/dev/null <<'EOF'
+  614  const ByteArray = imports.byteArray;
+  615  const { St, GLib, Gio, Clutter } = imports.gi;
+  616  const Main = imports.ui.main;
+  617  const PanelMenu = imports.ui.panelMenu;
+  618  const STATE_FILE = GLib.get_home_dir() + '/.local/share/hotspot-usage/state.json';
+  619  function human(n) {
+  620      let step = 1024.0;
+  621      let units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  622      let v = n;
+  623      for (let i = 0; i < units.length; i++) {
+  624          if (v < step)
+  625              return v.toFixed(2) + ' ' + units[i];
+  626          v = v / step;
+  627      }
+  628      return v.toFixed(2) + ' PB';
+  629  }
+  630  var HotspotIndicator = class extends PanelMenu.Button {
+  631      _init() {
+  632          PanelMenu.Button.prototype._init.call(this, 0.0, 'Hotspot Indicator');
+  633          this._label = new St.Label({
+  634              text: '…',
+  635              y_align: Clutter.ActorAlign.CENTER,
+  636          });
+  637          this.add_child(this._label);
+  638          this.connect('button-press-event', () => {
+  639              GLib.spawn_command_line_async('/usr/local/bin/hotspot-gui');
+  640          });
+  641          this._timeout = GLib.timeout_add_seconds(
+  642              GLib.PRIORITY_DEFAULT,
+  643              1,
+  644              () => {
+  645                  this._refresh();
+  646                  return true;
+  647              }
+  648          );
+  649      }
+  650      _refresh() {
+  651          try {
+  652              let [ok, contents] = GLib.file_get_contents(STATE_FILE);
+  653              if (!ok)
+  654                  return;
+  655              let txt = ByteArray.toString(contents);
+  656              let obj = JSON.parse(txt);
+  657              let today = obj.today || {};
+  658              let down = obj.speed_down_bps || 0;
+  659              let totalToday = (today.bytes_recv || 0) + (today.bytes_sent || 0);
+  660              let downH = human(down) + '/s';
+  661              let totalH = human(totalToday);
+  662              this._label.text = '↓ ' + downH + '  |  Today ' + totalH;
+  663          } catch (e) {
+  664              this._label.text = '↓ - | Today -';
+  665          }
+  666      }
+  667      destroy() {
+  668          if (this._timeout) {
+  669              GLib.source_remove(this._timeout);
+  670              this._timeout = 0;
+  671          }
+  672          PanelMenu.Button.prototype.destroy.call(this);
+  673      }
+  674  };
+  675  let indicator = null;
+  676  function init() {
+  677  }
+  678  function enable() {
+  679      if (!indicator) {
+  680          indicator = new HotspotIndicator();
+  681          Main.panel.addToStatusArea('hotspot-indicator', indicator, 1, 'right');
+  682      }
+  683  }
+  684  function disable() {
+  685      if (indicator) {
+  686          indicator.destroy();
+  687          indicator = null;
+  688      }
+  689  }
+  690  EOF
+  691  sed -n '1,5p' /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension-main.js
+  692  sudo tee /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js >/dev/null <<'EOF'
+  693  export { default } from './extension-main.js';
+  694  EOF
+  695  sed -n '1,3p' /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js
+  696  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  697  code .
+  698  gnome-extensions enable hotspot-indicator@hotspot
+  699  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -20
+  700  gnome-extensions disable hotspot-indicator@hotspot 2>/dev/null || true
+  701  sudo rm -rf /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  702  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  703  sudo rm -rf /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  704  mkdir -p ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  705  cd ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  706  cat > metadata.json <<'EOF'
+  707  {
+  708    "uuid": "hotspot-indicator@hotspot",
+  709    "name": "Hotspot Indicator",
+  710    "description": "Shows hotspot speed and today usage in the top bar.",
+  711    "shell-version": ["46"],
+  712    "version": 1
+  713  }
+  714  EOF
+  715  cd
+  716  cd ./Desktop/
+  717  cd tes
+  718  cd test
+  719  cat > metadata.json <<'EOF'
+  720  {
+  721    "uuid": "hotspot-indicator@hotspot",
+  722    "name": "Hotspot Indicator",
+  723    "description": "Shows hotspot speed and today usage in the top bar.",
+  724    "shell-version": ["46"],
+  725    "version": 1
+  726  }
+  727  EOF
+  728  cat > indicator.js <<'EOF'
+  729  import St from 'gi://St';
+  730  import GLib from 'gi://GLib';
+  731  import Clutter from 'gi://Clutter';
+  732  import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
+  733  import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+  734  const STATE_FILE = GLib.get_home_dir() + '/.local/share/hotspot-usage/state.json';
+  735  function human(n) {
+  736      let step = 1024.0;
+  737      let units = ['B', 'KB', 'MB', 'GB', 'TB'];
+  738      let v = n;
+  739      for (let i = 0; i < units.length; i++) {
+  740          if (v < step)
+  741              return `${v.toFixed(2)} ${units[i]}`;
+  742          v = v / step;
+  743      }
+  744      return `${v.toFixed(2)} PB`;
+  745  }
+  746  export class HotspotIndicator extends PanelMenu.Button {
+  747      constructor() {
+  748          super(0.0, 'Hotspot Indicator');
+  749          this._label = new St.Label({
+  750              text: '…',
+  751              y_align: Clutter.ActorAlign.CENTER,
+  752          });
+  753          this.add_child(this._label);
+  754          this.connect('button-press-event', () => {
+  755              GLib.spawn_command_line_async('/usr/local/bin/hotspot-gui');
+  756          });
+  757          this._timeoutId = GLib.timeout_add_seconds(
+  758              GLib.PRIORITY_DEFAULT,
+  759              1,
+  760              () => {
+  761                  this._refresh();
+  762                  return GLib.SOURCE_CONTINUE;
+  763              }
+  764          );
+  765          // initial refresh
+  766          this._refresh();
+  767      }
+  768      _refresh() {
+  769          try {
+  770              let [ok, contents] = GLib.file_get_contents(STATE_FILE);
+  771              if (!ok)
+  772                  return;
+  773              // contents is a Uint8Array in module mode
+  774              let txt = new TextDecoder().decode(contents);
+  775              let obj = JSON.parse(txt);
+  776              let today = obj.today || {};
+  777              let down = obj.speed_down_bps || 0;
+  778              let totalToday = (today.bytes_recv || 0) + (today.bytes_sent || 0);
+  779              let downH = human(down) + '/s';
+  780              let totalH = human(totalToday);
+  781              this._label.text = `↓ ${downH}  |  Today ${totalH}`;
+  782          } catch (e) {
+  783              this._label.text = '↓ - | Today -';
+  784          }
+  785      }
+  786      destroy() {
+  787          if (this._timeoutId) {
+  788              GLib.source_remove(this._timeoutId);
+  789              this._timeoutId = 0;
+  790          }
+  791          super.destroy();
+  792      }
+  793  }
+  794  EOF
+  795  cat > extension.js <<'EOF'
+  796  import { Extension } from 'resource:///org/gnome/shell/extensions/extension.js';
+  797  import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+  798  import { HotspotIndicator } from './indicator.js';
+  799  export default class HotspotIndicatorExtension extends Extension {
+  800      enable() {
+  801          this._indicator = new HotspotIndicator();
+  802          Main.panel.addToStatusArea('hotspot-indicator', this._indicator, 1, 'right');
+  803      }
+  804      disable() {
+  805          if (this._indicator) {
+  806              this._indicator.destroy();
+  807              this._indicator = null;
+  808          }
+  809      }
+  810  }
+  811  EOF
+  812  ls ~/.local/share/gnome-shell/extensions
+  813  cat ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  814  cd  /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  815  mkdir -p ~/.local/share/gnome-shell/extensions
+  816  mv ~/Desktop/test  ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  817  journalctl --user -b -o cat | grep -i hotspot-indicator | tail -20
+  818  cd  /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  819  cd ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  820  ls
+  821  gedit indicator.js 
+  822  cd ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  823  ls
+  824  cd /home/dipu/projects/hotspot-monitor/
+  825  code .
+  826  mkdir -p debian-src/DEBIAN
+  827  mkdir -p debian-src/usr/bin
+  828  mkdir -p debian-src/usr/share/hotspot-monitor
+  829  mkdir -p debian-src/usr/share/applications
+  830  mkdir -p debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  831  cp app/hotspot-gui debian-src/usr/bin/
+  832  cp app/hotspot_usage.py debian-src/usr/share/hotspot-monitor/
+  833  cp app/hotspot-monitor.desktop debian-src/usr/share/applications/
+  834  cp shell-extension/hotspot-indicator@hotspot/*.js debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  835  cp shell-extension/hotspot-indicator@hotspot/metadata.json debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  836  chmod 755 debian-src/usr/bin/hotspot-gui
+  837  mkdir -p ~/projects/hotspot-monitor/shell-extension/hotspot-indicator@hotspot
+  838  mkdir -p ~/projects/hotspot-monitor/shell-extension/hotspot-indicator@hotspot
+  839  cp ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/extension.js    ~/projects/hotspot-monitor/shell-extension/hotspot-indicator@hotspot/
+  840  cp ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/indicator.js    ~/projects/hotspot-monitor/shell-extension/hotspot-indicator@hotspot/
+  841  cp ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json    ~/projects/hotspot-monitor/shell-extension/hotspot-indicator@hotspot/
+  842  sudo rm -rf /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  843  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  844  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  845  sudo apt remove hotspot-usage
+  846  cd ~/projects/hotspot-monitor
+  847  dpkg-deb --build debian-src hotspot-monitor_1.0-1_all.deb
+  848  sudo dpkg -i hotspot-monitor_1.0-1_all.deb
+  849  gnome-extensions enable hotspot-indicator@hotspot
+  850  dpkg -l | grep hotspot
+  851  ls /usr/share/gnome-shell/extensions
+  852  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  853  cat /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  854  gnome-extensions list | grep hotspot
+  855  ~clear
+  856  clear
+  857  ls /usr/share/gnome-shell/extensions
+  858  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  859  cat /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  860  gnome-extensions list | grep hotspot
+  861  cd ~/projects/hotspot-monitor
+  862  ls debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  863  mkdir -p debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  864  cp shell-extension/hotspot-indicator@hotspot/extension.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  865  cp shell-extension/hotspot-indicator@hotspot/indicator.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  866  cp shell-extension/hotspot-indicator@hotspot/metadata.json    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  867  ls debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  868  # should show: extension.js  indicator.js  metadata.json
+  869  dpkg-deb --build debian-src hotspot-monitor_1.0-2_all.deb
+  870  sudo dpkg -P hotspot-monitor
+  871  sudo dpkg -i hotspot-monitor_1.0-2_all.deb
+  872  sudo apt -f install
+  873  sudo dpkg -i hotspot-monitor_1.0-2_all.deb
+  874  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  875  cat /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json
+  876  cp app/hotspot-gui debian-src/usr/bin/
+  877  chmod 755 debian-src/usr/bin/hotspot-gui
+  878  cd ~/projects/hotspot-monitor
+  879  cat > app/hotspot-gui <<'EOF'
+  880  #!/usr/bin/env bash
+  881  exec python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  882  EOF
+  883  chmod +x app/hotspot-gui
+  884  ls app
+  885  mkdir -p debian-src/usr/bin
+  886  cp app/hotspot-gui debian-src/usr/bin/
+  887  chmod 755 debian-src/usr/bin/hotspot-gui
+  888  mkdir -p debian-src/usr/share/hotspot-monitor
+  889  cp app/hotspot_usage.py debian-src/usr/share/hotspot-monitor/
+  890  ls debian-src/usr/bin
+  891  ls debian-src/usr/share/hotspot-monitor
+  892  dpkg-deb --build debian-src hotspot-monitor_1.0-4_all.deb
+  893  sudo dpkg -P hotspot-monitor
+  894  sudo dpkg -i hotspot-monitor_1.0-4_all.deb
+  895  sudo apt -f install
+  896  hotspot-gui  
+  897  cd ~/projects/hotspot-monitor
+  898  cat > debian-src/usr/bin/hotspot-gui <<'EOF'
+  899  #!/usr/bin/env bash
+  900  exec python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  901  EOF
+  902  chmod 755 debian-src/usr/bin/hotspot-gui
+  903  head -n 3 debian-src/usr/bin/hotspot-gui
+  904  # should show /usr/share/hotspot-monitor/..., NOT hotspot-usage
+  905  clear
+  906  dpkg-deb --build debian-src hotspot-monitor_1.0-5_all.deb
+  907  sudo dpkg -P hotspot-monitor
+  908  sudo dpkg -i hotspot-monitor_1.0-5_all.deb
+  909  sudo apt -f install
+  910  dpkg -l | grep hotspot-monitor
+  911  hotspot-gui
+  912  sudo sh -c 'cat > /usr/bin/hotspot-gui' <<'EOF'
+  913  #!/usr/bin/env bash
+  914  exec python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  915  EOF
+  916  sudo chmod 755 /usr/bin/hotspot-gui
+  917  head -n 3 /usr/bin/hotspot-gui
+  918  hotspot-gui
+  919  hash -r
+  920  which hotspot-gui
+  921  type hotspot-gui
+  922  find / -name "hotspot-gui" 2>/dev/null
+  923  rm ~/.local/bin/hotspot-gui
+  924  which hotspot-gui
+  925  head -n 3 /usr/bin/hotspot-gui
+  926  hotspot-gui
+  927  which python3
+  928  python3 -V
+  929  env | grep SNAP
+  930  sudo sh -c 'cat > /usr/bin/hotspot-gui' <<'EOF'
+  931  #!/usr/bin/env bash
+  932  # Run with system Python and a clean env
+  933  env -u SNAP -u SNAP_NAME -u SNAP_INSTANCE_NAME -u SNAP_REVISION -u SNAP_ARCH \
+  934      -u SNAP_LIBRARY_PATH -u LD_LIBRARY_PATH \
+  935      /usr/bin/python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  936  EOF
+  937  sudo chmod 755 /usr/bin/hotspot-gui
+  938  hotspot-gui
+  939  sudo sh -c 'cat > /usr/bin/hotspot-gui' <<'EOF'
+  940  #!/usr/bin/env bash
+  941  # Run with system Python and a clean env
+  942  env -u SNAP -u SNAP_NAME -u SNAP_INSTANCE_NAME -u SNAP_REVISION -u SNAP_ARCH \
+  943      -u SNAP_LIBRARY_PATH -u LD_LIBRARY_PATH \
+  944      /usr/bin/python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  945  EOF
+  946  hotspot-gui
+  947  clear
+  948  sudo sh -c 'cat > /usr/bin/hotspot-gui' <<'EOF'
+  949  #!/usr/bin/env bash
+  950  # Run with system Python and avoid Snap libraries
+  951  # Build a clean environment: keep HOME and DISPLAY, reset PATH, drop Snap vars.
+  952  env \
+  953    HOME="$HOME" \
+  954    DISPLAY="$DISPLAY" \
+  955    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
+  956    LD_LIBRARY_PATH="/usr/lib:/usr/lib/x86_64-linux-gnu" \
+  957    SNAP= SNAP_NAME= SNAP_INSTANCE_NAME= SNAP_REVISION= SNAP_ARCH= SNAP_LIBRARY_PATH= \
+  958    /usr/bin/python3 /usr/share/hotspot-monitor/hotspot_usage.py "$@"
+  959  EOF
+  960  sudo chmod 755 /usr/bin/hotspot-gui
+  961  hotspot-gui
+  962  nano /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/indicator.js
+  963  # Copy updated Python app and wrapper
+  964  cp app/hotspot_usage.py debian-src/usr/share/hotspot-monitor/
+  965  cp app/hotspot-gui        debian-src/usr/bin/
+  966  chmod 755 debian-src/usr/bin/hotspot-gui
+  967  # Copy updated extension files
+  968  cp shell-extension/hotspot-indicator@hotspot/extension.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  969  cp shell-extension/hotspot-indicator@hotspot/indicator.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  970  cp shell-extension/hotspot-indicator@hotspot/metadata.json    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+  971  ls debian-src/usr/share/hotspot-monitor
+  972  ls debian-src/usr/bin
+  973  ls debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  974  dpkg-deb --build debian-src hotspot-monitor_1.0-6_all.deb
+  975  sudo dpkg -P hotspot-monitor
+  976  sudo rm -rf /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  977  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  978  sudo rm -rf /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  979  rm -rf ~/.local/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  980  sudo apt remove hotspot-monitor
+  981  sudo dpkg -i hotspot-monitor_1.0-6_all.deb
+  982  sudo apt -f install
+  983  gnome-extensions enable hotspot-indicator@hotspot
+  984  clear
+  985  dpkg -l | grep hotspot-monitor
+  986  ls -R /usr/share/gnome-shell/extensions
+  987  ls /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  988  cat /usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/metadata.json 2>/dev/null || echo "no-metadata"
+  989  gnome-extensions list | grep hotspot
+  990  dpkg-deb --build debian-src hotspot-monitor_1.0-7_all.deb
+  991  sudo dpkg -P hotspot-monitor
+  992  sudo dpkg -i hotspot-monitor_1.0-7_all.deb
+  993  sudo apt -f install
+  994  hotspot-gui
+  995  gnome-extensions enable hotspot-indicator@hotspot
+  996  which hotspot-gui
+  997  dpkg -l | grep hotspot-monitor
+  998  mkdir -p debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot
+  999  cp shell-extension/hotspot-indicator@hotspot/extension.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+ 1000  cp shell-extension/hotspot-indicator@hotspot/indicator.js    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+ 1001  cp shell-extension/hotspot-indicator@hotspot/metadata.json    debian-src/usr/share/gnome-shell/extensions/hotspot-indicator@hotspot/
+ 1002  sudo dpkg -P hotspot-monitor
+ 1003  dpkg-deb --build debian-src hotspot-monitor_1.0-8_all.deb
+ 1004  history
+dipu@sh:~/projects/hotspot-monitor$ 

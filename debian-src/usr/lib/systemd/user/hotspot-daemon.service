@@ -1,0 +1,10 @@
+[Unit]
+Description=Hotspot usage daemon (user)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/share/hotspot-usage/daemon.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

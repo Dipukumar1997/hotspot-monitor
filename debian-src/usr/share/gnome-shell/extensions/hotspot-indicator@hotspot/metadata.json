@@ -1,0 +1,7 @@
+{
+  "uuid": "hotspot-indicator@hotspot",
+  "name": "Hotspot Indicator",
+  "description": "Shows hotspot speed and today usage in the top bar.",
+  "shell-version": ["46"],
+  "version": 1
+}
