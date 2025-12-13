@@ -21,10 +21,12 @@ monitoring.
 
         sudo dpkg -i hotspot-monitor_VERSION_all.deb
         sudo apt --fix-broken install
+        ps aux | grep -i hotspot-monitor
+        kill <PID> <PID> <PID> <PID>
 
-3.  The application will appear in the system application list.
+4.  The application will appear in the system application list.
 
-4.  The GNOME extension will be enabled automatically.
+5.  The GNOME extension will be enabled automatically.
 
 ## Running
 
