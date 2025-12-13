@@ -21,6 +21,18 @@ monitoring.
 
         sudo dpkg -i hotspot-monitor_VERSION_all.deb
         sudo apt --fix-broken install
+
+        sudo apt-autoremove
+        sudo apt autoremove --purge
+    
+        systemctl --user list-unit-files | grep -i hotspot
+        systemctl --user list-units --type=service --state=running | grep -i hotspot
+        systemctl --user stop hotspot-daemon.service
+    
+        lsof ~/.local/share/hotspot-usage/state.json
+        rm -f ~/.cache/hotspot-monitor/hotspot-monitor.lock
+        pkill -f /usr/share/hotspot-monitor/hotspot_usage.py
+    
         ps aux | grep -i hotspot-monitor
         kill <PID> <PID> <PID> <PID>
 
