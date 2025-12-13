@@ -652,6 +652,7 @@ def bytes_to_human(n):
 
 class HotspotApp(Gtk.Window):
 
+    '''
     def __init__(self):
         Gtk.Window.__init__(self, title=APP_NAME)
         self.set_border_width(12)
@@ -744,17 +745,123 @@ class HotspotApp(Gtk.Window):
         self.quit_btn.connect("clicked", self.on_destroy)
         grid.attach(self.quit_btn, 2, 9, 1, 1)
 
-        self.connect("destroy", self.on_destroy)
+        # self.connect("destroy", self.on_destroy)
+        # When user clicks X: hide the window, don't quit the app
 
         self.iface = self.if_combo.get_active_text()
         self.init_counters()
 
         self.update_loop()
         GLib.timeout_add(UPDATE_INTERVAL_MS, self.update_loop)
+        self.connect("delete-event", Gtk.Widget.hide_on_delete)
 
         # ---------- FIX: RESTORE POSITION AFTER THE WINDOW IS MAPPED ----------
         # self.connect("map", self._restore_window_state)
 
+    '''
+
+    def __init__(self):
+        Gtk.Window.__init__(self, title=APP_NAME)
+
+        # ---- Window basics ----
+        self.set_border_width(12)
+        self.set_default_size(360, 160)
+        self.set_resizable(False)
+
+        # IMPORTANT: X button should HIDE the window, not quit the process
+        # gtk_widget_hide_on_delete() hides the window and returns TRUE. [web:85]
+        self.connect("delete-event", Gtk.Widget.hide_on_delete)  # [web:85][web:87]
+
+        # If you want top-right placement
+        GLib.idle_add(self._move_to_top_right)
+
+        # ---- Data init ----
+        self.data = load_data()
+        self.today_key = date.today().isoformat()
+        if "days" not in self.data:
+            self.data["days"] = {}
+        if self.today_key not in self.data["days"]:
+            self.data["days"][self.today_key] = {"bytes_sent": 0, "bytes_recv": 0}
+
+        self.prev_counters = None
+        self.session_sent = 0
+        self.session_recv = 0
+
+        # ---- UI ----
+        grid = Gtk.Grid(row_spacing=8, column_spacing=8)
+        self.add(grid)
+
+        self.if_label = Gtk.Label(label="Interface:")
+        grid.attach(self.if_label, 0, 0, 1, 1)
+
+        interfaces = list(psutil.net_if_stats().keys())
+        self.if_combo = Gtk.ComboBoxText()
+        for iface in interfaces:
+            self.if_combo.append_text(iface)
+
+        default_if = nic_choice()
+        if default_if in interfaces:
+            self.if_combo.set_active(interfaces.index(default_if))
+        else:
+            self.if_combo.set_active(0)
+
+        self.if_combo.connect("changed", self.on_iface_changed)
+        grid.attach(self.if_combo, 1, 0, 2, 1)
+
+        # Speed labels
+        self.down_label = Gtk.Label(label="Download (speed):")
+        self.down_value = Gtk.Label(label="0 B/s")
+        grid.attach(self.down_label, 0, 1, 1, 1)
+        grid.attach(self.down_value, 1, 1, 2, 1)
+
+        self.up_label = Gtk.Label(label="Upload (speed):")
+        self.up_value = Gtk.Label(label="0 B/s")
+        grid.attach(self.up_label, 0, 2, 1, 1)
+        grid.attach(self.up_value, 1, 2, 2, 1)
+
+        # Session totals
+        sep = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+        grid.attach(sep, 0, 3, 3, 1)
+
+        self.sess_down_label = Gtk.Label(label="Session Download:")
+        self.sess_down_value = Gtk.Label(label="0 B")
+        grid.attach(self.sess_down_label, 0, 4, 1, 1)
+        grid.attach(self.sess_down_value, 1, 4, 2, 1)
+
+        self.sess_up_label = Gtk.Label(label="Session Upload:")
+        self.sess_up_value = Gtk.Label(label="0 B")
+        grid.attach(self.sess_up_label, 0, 5, 1, 1)
+        grid.attach(self.sess_up_value, 1, 5, 2, 1)
+
+        # Today totals
+        sep2 = Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL)
+        grid.attach(sep2, 0, 6, 3, 1)
+
+        self.today_down_label = Gtk.Label(label="Today Download:")
+        self.today_down_value = Gtk.Label(label="0 B")
+        grid.attach(self.today_down_label, 0, 7, 1, 1)
+        grid.attach(self.today_down_value, 1, 7, 2, 1)
+
+        self.today_up_label = Gtk.Label(label="Today Upload:")
+        self.today_up_value = Gtk.Label(label="0 B")
+        grid.attach(self.today_up_label, 0, 8, 1, 1)
+        grid.attach(self.today_up_value, 1, 8, 2, 1)
+
+        # Buttons
+        self.reset_btn = Gtk.Button(label="Reset Today")
+        self.reset_btn.connect("clicked", self.on_reset)
+        grid.attach(self.reset_btn, 0, 9, 1, 1)
+
+        self.quit_btn = Gtk.Button(label="Quit")
+        self.quit_btn.connect("clicked", self.on_destroy)  # on_destroy should call Gtk.main_quit()
+        grid.attach(self.quit_btn, 2, 9, 1, 1)
+
+        # ---- Start monitoring loop (must not depend on window being visible) ----
+        self.iface = self.if_combo.get_active_text()
+        self.init_counters()
+
+        # Don’t call update_loop() twice; let timeout drive it
+        GLib.timeout_add(UPDATE_INTERVAL_MS, self.update_loop)
 
     # ============================================================
     #                WINDOW STATE: LOAD (EARLY)
@@ -892,56 +999,56 @@ class HotspotApp(Gtk.Window):
     #     return True
 
     def update_loop(self):
-    try:
-        counters = psutil.net_io_counters(pernic=True)
-        cur = counters.get(self.iface, None)
-        if cur is None:
-            self.down_value.set_text("N/A")
-            self.up_value.set_text("N/A")
-            return True
+        try:
+            counters = psutil.net_io_counters(pernic=True)
+            cur = counters.get(self.iface, None)
+            if cur is None:
+                self.down_value.set_text("N/A")
+                self.up_value.set_text("N/A")
+                return True
 
-        delta_recv = cur.bytes_recv - self.prev_counters.bytes_recv
-        delta_sent = cur.bytes_sent - self.prev_counters.bytes_sent
-        delta_recv = max(delta_recv, 0)
-        delta_sent = max(delta_sent, 0)
+            delta_recv = cur.bytes_recv - self.prev_counters.bytes_recv
+            delta_sent = cur.bytes_sent - self.prev_counters.bytes_sent
+            delta_recv = max(delta_recv, 0)
+            delta_sent = max(delta_sent, 0)
 
-        self.prev_counters = cur
+            self.prev_counters = cur
 
-        # session
-        self.session_recv += delta_recv
-        self.session_sent += delta_sent
+            # session
+            self.session_recv += delta_recv
+            self.session_sent += delta_sent
 
-        # ----- DAILY TOTALS (THIS PART MATTERS) -----
-        today = date.today().isoformat()
-        if today != self.today_key:
-            # new day: start from zero
-            self.today_key = today
-            self.data["days"][today] = {"bytes_sent": 0, "bytes_recv": 0}
+            # ----- DAILY TOTALS (THIS PART MATTERS) -----
+            today = date.today().isoformat()
+            if today != self.today_key:
+                # new day: start from zero
+                self.today_key = today
+                self.data["days"][today] = {"bytes_sent": 0, "bytes_recv": 0}
 
-        # at this point self.data["days"][self.today_key] may already
-        # have been reset to 0 by on_reset(), so just keep adding
-        self.data["days"][self.today_key]["bytes_recv"] += delta_recv
-        self.data["days"][self.today_key]["bytes_sent"] += delta_sent
-        save_data(self.data)
+            # at this point self.data["days"][self.today_key] may already
+            # have been reset to 0 by on_reset(), so just keep adding
+            self.data["days"][self.today_key]["bytes_recv"] += delta_recv
+            self.data["days"][self.today_key]["bytes_sent"] += delta_sent
+            save_data(self.data)
 
-        today_recv = self.data["days"][self.today_key]["bytes_recv"]
-        today_sent = self.data["days"][self.today_key]["bytes_sent"]
+            today_recv = self.data["days"][self.today_key]["bytes_recv"]
+            today_sent = self.data["days"][self.today_key]["bytes_sent"]
 
-        # write what the extension reads
-        save_state_file(delta_recv, today_recv, today_sent)
+            # write what the extension reads
+            save_state_file(delta_recv, today_recv, today_sent)
 
-        # labels
-        self.down_value.set_text(f"{bytes_to_human(delta_recv)}/s")
-        self.up_value.set_text(f"{bytes_to_human(delta_sent)}/s")
-        self.sess_down_value.set_text(bytes_to_human(self.session_recv))
-        self.sess_up_value.set_text(bytes_to_human(self.session_sent))
-        self.today_down_value.set_text(bytes_to_human(today_recv))
-        self.today_up_value.set_text(bytes_to_human(today_sent))
+            # labels
+            self.down_value.set_text(f"{bytes_to_human(delta_recv)}/s")
+            self.up_value.set_text(f"{bytes_to_human(delta_sent)}/s")
+            self.sess_down_value.set_text(bytes_to_human(self.session_recv))
+            self.sess_up_value.set_text(bytes_to_human(self.session_sent))
+            self.today_down_value.set_text(bytes_to_human(today_recv))
+            self.today_up_value.set_text(bytes_to_human(today_sent))
 
-    except Exception:
-        self.down_value.set_text("err")
-        self.up_value.set_text("err")
-    return True
+        except Exception:
+            self.down_value.set_text("err")
+            self.up_value.set_text("err")
+        return True
 
     def on_reset(self, button):
         self.data["days"][self.today_key] = {"bytes_sent": 0, "bytes_recv": 0}

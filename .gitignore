@@ -1,1 +1,4 @@
 *.deb
+***.pdf
+.gitignore
+Window_position_fix.pdf
