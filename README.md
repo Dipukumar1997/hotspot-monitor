@@ -21,6 +21,7 @@ monitoring.
 
         sudo dpkg -i hotspot-monitor_VERSION_all.deb
         sudo apt --fix-broken install
+        hash -r
 
         sudo apt-autoremove
         sudo apt autoremove --purge
