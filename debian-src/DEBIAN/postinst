@@ -1,16 +1,16 @@
-#!/bin/sh
-set -e
+# #!/bin/sh
+# set -e
 
-# Only try user stuff if we have a session bus
-if [ -n "$XDG_RUNTIME_DIR" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    if command -v systemctl >/dev/null 2>&1; then
-        systemctl --user daemon-reload || true
-        systemctl --user enable --now hotspot-daemon.service || true
-    fi
+# # Only try user stuff if we have a session bus
+# i f [ -n "$XDG_RUNTIME_DIR" ] && [ -n "$DBUS_SESSION_BUS_ADDRESS" ]; then
+#     i f c ommand -v systemctl >/dev/null 2>&1; then
+#         s ystemctl --user daemon-reload || true
+#         systemctl --user enable --now hotspot-daemon.service || true
+#     fi
 
-    if command -v gnome-extensions >/dev/null 2>&1; then
-        gnome-extensions enable hotspot-indicator@hotspot || true
-    fi
-fi
+#     if c ommand -v gnome-extensions >/dev/null 2>&1; then
+#         gnome-extensions enable hotspot-indicator@hotspot || true
+#     fi
+# fi
 
-exit 0
+# exit 0
